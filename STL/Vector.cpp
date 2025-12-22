@@ -40,6 +40,7 @@
 
 // algorithms:
 
+// sort
 // swap - Swaps the elements of a vectors.
 // reverse
 // reverse_copy

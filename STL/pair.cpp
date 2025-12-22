@@ -37,7 +37,7 @@ int main() {
 
     // Comparison operators
     pair<int, string> myPair3(10, "Changed");
-    cout << boolalpha;
+    // cout << boolalpha;
     // cout << "myPair == myPair3: " << (myPair == myPair3) << endl; // Output: myPair == myPair3: true
     // cout << "myPair != myPair2: " << (myPair != myPair2) << endl; // Output: myPair != myPair2: true
     // cout << "myPair < myPair2: " << (myPair < myPair2) << endl; // Output: myPair < myPair2: false

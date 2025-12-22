@@ -35,6 +35,19 @@ int main() {
     } while (next_permutation(str.begin(), str.end()));
     //only work with "sorted"string or array
 
+    vector<int> v = {1, 2, 3};
+
+    // Sort to start with the smallest lexicographical permutation
+    sort(v.begin(), v.end());
+
+    do {
+        // Print current permutation
+        for (int num : v) {
+            cout << num << " ";
+        }
+        cout << endl;
+    } while (next_permutation(v.begin(), v.end()));
+
     // Binary search
     bool found = binary_search(vec.begin(), vec.end(), 3); // true
 
