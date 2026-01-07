@@ -22,6 +22,26 @@ struct Employee
     bool isActive = true;         // primary data type
     string name = "Paurush";      // secondary (object) data type
 
+    Employee()
+    {
+        cout << "Default constructor called" << endl;
+    }
+
+    // 🔹 Constructor WITH parameters
+    Employee(int i, string n, double s)
+    {
+        id = i;
+        name = n;
+        salary = s;
+        cout << "Parameterized constructor called" << endl;
+    }
+
+    // 🔹 One-line parameterized constructor
+    Employee(int i, string n, double s) : id(i), name(n), salary(s) {}
+
+    // 🔹 One-line default constructor
+    Employee() : id(0), name("NA"), salary(0.0) {}
+
 private:
     // 🔹 Private member (manual access modifier)
     string secretCode = "EMP-SECRET";
@@ -67,6 +87,13 @@ int main()
     cout << endl;
 
     cout << "=== Pointer to Structure ===" << endl;
+
+    // 🔹 Assign e1 to e2 (member-wise copy)
+    Employee e3 = e1;
+
+    cout << "Before modification:" << endl;
+    cout << "e1 -> " << e3.id << ", " << e3.name << ", " << e3.salary << endl;
+    cout << "e2 -> " << e3.id << ", " << e3.name << ", " << e3.salary << endl;
 
     // 🔹 Pointer to structure
     Employee* ptr = &e1;
