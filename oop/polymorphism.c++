@@ -10,7 +10,7 @@ class Animal
 public:
     Animal(std::string name) : name(name) {}
 
-    // Virtual method
+    // Virtual method -> it is a function that is declared in the base class and is overridden in the derived class. If you create an object of the derived class, and assign it to a pointer of the base class, you can call the virtual function of the derived class using the pointer of the base class. This is called dynamic binding. This will ensure that the correct function is called based on the object type, not the pointer type.
     virtual void makeSound()
     {
         std::cout << name << " makes a sound." << std::endl;
