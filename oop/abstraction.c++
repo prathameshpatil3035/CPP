@@ -1,5 +1,5 @@
 // the ability of a function, object, or operator to take on multiple forms.It allows the same function or method to behave differently based on the object it is operating on.
-
+// hiding the complex things behind a procedure that makes those thing look simple.
 #include <iostream>
 #include <cmath>
 

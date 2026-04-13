@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 
-// bundling of data(variables) and methods(functions) that operate on the data into a single unit, called a class.Encapsulation also involves restricting direct access to some of the object's components, which is often done by using access modifiers like private, protected, and public. The goal is to protect the internal state of an object and expose only necessary functionality, ensuring that an object controls its own data.
+// bundling (or bind) of data(variables) and methods(functions) that operate on the data into a single unit, called a class.Encapsulation also involves restricting direct access to some of the object's components, which is often done by using access modifiers like private, protected, and public. The goal is to protect the internal state of an object and expose only necessary functionality, ensuring that an object controls its own data.
+
 
 class Person
 {

@@ -128,5 +128,39 @@ int main()
         }
     }
 
+    Both next() and advance() move an iterator forward (or backward),
+but they behave differently.
+
+// 1. next()
+
+// Definition:
+// next(it, n)
+
+// • Returns a NEW iterator moved n positions ahead.
+// • Does NOT modify the original iterator.
+// • Can be used directly inside expressions.
+
+    vector<int> v = {10,20,30,40,50};
+    auto it = v.begin();
+
+    auto it2 = next(it, 2);   // move 2 positions
+    cout << *it << endl;      // 10 (original unchanged)
+    cout << *it2 << endl;     // 30
+
+// 2. advance()
+
+// Definition:
+// advance(it, n)
+
+// • Moves the iterator n positions.
+// • MODIFIES the original iterator.
+// • Returns nothing (void).
+// • Cannot be used inside expressions.
+
+    vector<int> v = {10,20,30,40,50};
+    auto it = v.begin();
+    advance(it, 2);     // move iterator 2 positions
+    cout << *it << endl;  // 30
+
     return 0;
 }
