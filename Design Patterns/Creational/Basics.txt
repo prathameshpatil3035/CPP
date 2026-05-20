@@ -1,0 +1,273 @@
+SOLID Principles (Low Level Design / OOP)
+
+1. S — Single Responsibility Principle (SRP)
+
+Definition:
+A class should have only one responsibility or one reason to change.
+
+Meaning:
+One class = one job.
+
+Bad Example:
+InvoiceService:
+- calculate invoice
+- save to DB
+- send email
+
+Good Example:
+InvoiceCalculator → calculation
+InvoiceRepository → DB operations
+EmailService → send email
+
+Benefits:
+- Easier maintenance
+- Less bugs
+- Better readability
+- Easier testing
+
+Memory Trick:
+“One class, one responsibility”
+
+
+2. O — Open/Closed Principle (OCP)
+
+Definition:
+Software entities should be open for extension but closed for modification.
+
+Meaning:
+Add new functionality without changing old working code.
+
+Bad Example:
+if(paymentType == "UPI") {}
+else if(paymentType == "CARD") {}
+
+Every new type modifies old code.
+
+Good Example:
+Create interface:
+Payment
+
+Classes:
+UpiPayment
+CardPayment
+NetBankingPayment
+
+Add new class instead of changing existing code.
+
+Benefits:
+- Less regression bugs
+- Easy scalability
+- Cleaner architecture
+
+Memory Trick:
+“Extend, don’t modify”
+
+
+3. L — Liskov Substitution Principle (LSP)
+
+Definition:
+Derived/child class should replace parent class without breaking behavior.
+
+Meaning:
+Child should behave correctly wherever parent is used.
+
+Bad Example:
+Bird → fly()
+
+Penguin extends Bird
+but Penguin cannot fly.
+
+This breaks parent expectation.
+
+Good Example:
+Bird
+FlyingBird
+
+Sparrow → FlyingBird
+Penguin → Bird
+
+Benefits:
+- Proper inheritance
+- Fewer runtime surprises
+- Better abstraction
+
+Memory Trick:
+“Child should safely replace parent”
+
+
+4. I — Interface Segregation Principle (ISP)
+
+Definition:
+Do not force a class to implement methods it does not need.
+
+Meaning:
+Create small focused interfaces.
+
+Bad Example:
+Worker interface:
+- work()
+- eat()
+- code()
+
+Robot implements Worker
+but robot does not eat.
+
+Good Example:
+Workable
+Eatable
+Codeable
+
+Robot → Workable
+Developer → Workable + Eatable + Codeable
+
+Benefits:
+- Cleaner interfaces
+- Less unnecessary code
+- Better maintainability
+
+Memory Trick:
+“Small interfaces are better”
+
+
+5. D — Dependency Inversion Principle (DIP)
+
+Definition:
+Depend on abstractions (interfaces), not concrete classes.
+
+Meaning:
+Use interfaces instead of directly depending on implementation.
+
+Bad Example:
+NotificationService → EmailService
+
+Hardcoded dependency.
+
+Good Example:
+MessageService interface
+
+Implementations:
+EmailService
+SMSService
+SlackService
+
+NotificationService depends on MessageService.
+
+Benefits:
+- Loose coupling
+- Easier testing
+- Easy replacement of implementations
+- Better scalability
+
+Memory Trick:
+“Depend on abstraction, not implementation”
+
+
+SOLID Summary:
+
+S → Single Responsibility
+= One class, one job
+
+O → Open Closed
+= Extend, don’t modify
+
+L → Liskov Substitution
+= Child replaces parent safely
+
+I → Interface Segregation
+= Small interfaces
+
+D → Dependency Inversion
+= Depend on interfaces, not concrete classes
+
+
+DESIGN PATTERNS (Gang of Four - GoF)
+
+1. CREATIONAL DESIGN PATTERNS
+(How objects are created)
+
+1. Singleton
+- Only one object instance exists
+
+2. Factory Method
+- Creates object without exposing creation logic
+
+3. Abstract Factory
+- Factory of factories
+- Creates families of related objects
+
+4. Builder
+- Builds complex objects step by step
+
+5. Prototype
+- Creates object by cloning existing object
+
+
+-----------------------------------------
+
+2. STRUCTURAL DESIGN PATTERNS
+(How classes/objects are connected)
+
+6. Adapter
+- Converts one interface into another
+
+7. Bridge
+- Separates abstraction from implementation
+
+8. Composite
+- Tree structure (parent-child hierarchy)
+
+9. Decorator
+- Adds behavior dynamically
+
+10. Facade
+- Simplifies complex subsystem
+
+11. Flyweight
+- Reduces memory by sharing objects
+
+12. Proxy
+- Controls access to object
+
+
+-----------------------------------------
+
+3. BEHAVIORAL DESIGN PATTERNS
+(How objects communicate/behave)
+
+13. Chain of Responsibility
+- Pass request through chain of handlers
+
+14. Command
+- Encapsulates request as object
+
+15. Interpreter
+- Language grammar interpretation
+
+16. Iterator
+- Traverse collection
+
+17. Mediator
+- Central communication controller
+
+18. Memento
+- Save and restore object state
+
+19. Observer
+- One-to-many notification system
+
+20. State
+- Object changes behavior by state
+
+21. Strategy
+- Multiple interchangeable algorithms
+
+22. Template Method
+- Defines skeleton of algorithm
+
+23. Visitor
+- Add operation without modifying object
+
+24. Null Object
+- Default object instead of null
+
+-----------------------------------------
